@@ -14,7 +14,7 @@ public class DaoPostgresUsuario implements DaoUsuario {
 	
 	private final String UPDATE = "UPDATE usuarios set nome = ?, senha = ? WHERE login = ?";
 	
-	private final String SELECT_BY_LOGIN = "SELECT u.login, u.senha "
+	private final String SELECT_BY_LOGIN = "SELECT u.login, u.senha, u.nome "
 											+ "FROM usuarios u "
 											+ "WHERE u.login = ?";
 	
