@@ -67,6 +67,9 @@ public class UsuarioService {
 				loginGerado = partesDoNome.get(0) + "." + partesDoNome.get(i);
 				usuarioEncontrado = dao.buscarPor(loginGerado);
 				if (usuarioEncontrado == null) {
+					if (loginGerado.length() > 40) {
+						loginGerado = loginGerado.substring(0, 40);
+					}
 					return loginGerado;
 				}
 			}
@@ -86,7 +89,7 @@ public class UsuarioService {
 		return new DigestUtils(MessageDigestAlgorithms.SHA3_256).digestAsHex(senha);
 	}
 	
-	@SuppressWarnings("deprecations")
+	@SuppressWarnings("deprecation")
 	private void validar(String senha) {
 		
 		boolean isSenhaValida = !Strings.isNullOrEmpty(senha)
