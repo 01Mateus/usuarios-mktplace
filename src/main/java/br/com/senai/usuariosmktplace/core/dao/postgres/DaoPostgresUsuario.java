@@ -8,6 +8,7 @@ import br.com.senai.usuariosmktplace.core.dao.DaoUsuario;
 import br.com.senai.usuariosmktplace.core.dao.ManagerDb;
 import br.com.senai.usuariosmktplace.core.domain.Usuario;
 
+
 public class DaoPostgresUsuario implements DaoUsuario {
 	
 	private final String INSERT = "INSERT INTO usuarios (login, nome, senha) VALUES (?, ?, ?)";
